@@ -1,0 +1,45 @@
+[Unit]
+Description=Lightweight LAN Share
+After=network.target
+RequiresMountsFor=/var/lib/lan-share/uploads
+
+[Service]
+Environment=LAN_SHARE_DATA_DIR=/var/lib/lan-share
+Type=simple
+
+User=lanshare
+Group=lanshare
+
+WorkingDirectory=/var/lib/lan-share
+ExecStartPre=/usr/bin/mountpoint -q /var/lib/lan-share/uploads
+
+ExecStart=/usr/bin/python3 /opt/lan-share/server.py
+
+Restart=on-failure
+RestartSec=2
+
+# Prefer other heavier workloads over LAN Share.
+Nice=10
+CPUWeight=20
+IOWeight=20
+TasksMax=32
+
+# Security / isolation.
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/lan-share
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+
+Environment=PYTHONDONTWRITEBYTECODE=1
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
