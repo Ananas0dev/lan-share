@@ -35,3 +35,7 @@ Open <http://127.0.0.1:8765/share/>. Runtime files go into ignored `data/`. The 
 Source and static assets were recovered from the running service on 2026-10-02. The public copy adds configurable storage/port settings and local serving of the existing PWA assets. No stored shares, uploads, signing keys, passwords, or private hostnames are included. The live service was not modified.
 
 [Architecture](docs/architecture.md) · [Self-hosting](docs/self-hosting.md) · [API](docs/api.md) · [Known limitations](docs/limitations.md) · [Security model](SECURITY.md) · [Credits](NOTICE.md)
+
+## License
+
+Original project code and documentation are licensed under [GNU GPL version 3](LICENSE) (`GPL-3.0-only`). Third-party components retain their own licenses and notices in [NOTICE.md](NOTICE.md).
