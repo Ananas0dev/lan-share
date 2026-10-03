@@ -6,6 +6,12 @@ No accounts or native client are needed. The Arabic-first interface also support
 
 ![LAN Share with synthetic demonstration content](screenshots/lan-share.png)
 
+## AI assistance and feedback
+
+AI generated most of the project-specific code and documentation. I brought the needs, tried things on my own setup, and shared the results to guide the work. I'm still learning, and there may be mistakes or better approaches I haven't discovered. Existing projects and libraries are credited separately.
+
+Suggestions, corrections, alternative solutions, and any helpful notes are welcome. Please [open an issue](https://github.com/Ananas0dev/lan-share/issues) or send a pull request—even pointing me toward an existing tool or explaining a better way would help.
+
 ## Two ways to share
 
 | Mode | Path | Lifetime |
